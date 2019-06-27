@@ -34,7 +34,8 @@ module.exports = merge(baseConfig, {
         use: [{
           loader: "image-webpack-loader",
           options: {
-            bypassOnDebug: true,
+            bypassOnDebug: true, // webpack@1.x
+            disable: true, // webpack@2.x and newer
             optipng: {
               optimizationLevel: 7,
             },

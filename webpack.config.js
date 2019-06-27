@@ -34,9 +34,18 @@ module.exports =  merge(baseConfig, {
         use: [{
           loader: "image-webpack-loader",
           options: {
-            bypassOnDebug: true,
+            bypassOnDebug: false, // webpack@1.x
+            disable: false, // webpack@2.x and newer
+            mozjpeg: {
+              progressive: true,
+              quality: 65
+            },
             optipng: {
               optimizationLevel: 7,
+            },
+            pngquant: {
+              quality: '65-90',
+              speed: 4
             },
             gifsicle: {
               interlaced: false
